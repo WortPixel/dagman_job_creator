@@ -4,7 +4,7 @@ This script can be used to create [DAGman](https://research.cs.wisc.edu/htcondor
 ## Usage
 Provide a `init` file like the example config in `resources/config.ini`.
 
-Run `python create_jobs.py /path/to/config.ini`.
+Run `./bin/create_dagman_job /path/to/config.ini`.
 
 This will create a folder named after the provided job name, with a copy of the `init` file for reproducability. Inside this folder folders for each dataset are created. A dataset number is the combination of the `particle_type` and the `systematics` value.
 
