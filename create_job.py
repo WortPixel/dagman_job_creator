@@ -14,7 +14,6 @@ import sys
 import subprocess
 
 from configparser import SafeConfigParser
-from tqdm import tqdm
 
 
 def generate_DAGman_job(argv):
@@ -126,7 +125,12 @@ def generate_DAGman_job(argv):
             for root, dirs, files in walk(in_dir):
                 if 'log' in root:
                     continue
-                for file_name in tqdm(files):
+                try:
+                    from tqdm import tqdm
+                    file_list = tqdm(files)
+                except ImportError:
+                    file_list = files
+                for file_name in file_list:
                     if ending in file_name and not file_name.startswith('Geo'):
                         job_id = job_name + '_' + \
                                  file_name[:file_name.find(ending)-1].replace('.', '_')
