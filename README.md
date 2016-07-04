@@ -1,6 +1,8 @@
 # DAGman Job Creator
 This script can be used to create [DAGman](https://research.cs.wisc.edu/htcondor/dagman/dagman.html) jobs from a config file. The templates for all files created during the process can be found in the `resources` folder.
 
+It is intended to create jobs processing folders (with sub-folders) of data one file at a time, whereas each file should be processed in one job.
+
 ## Usage
 Provide a `init` file like the example config in `resources/config.ini`.
 
