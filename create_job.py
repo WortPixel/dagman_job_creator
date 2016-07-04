@@ -2,9 +2,6 @@
 # coding: utf-8
 '''
 Create a job from a given config file
-To do:
-- add lido/phido/cobalt job-management via hostname
-- create test job with given settings but for one file only 
 '''
 from __future__ import print_function
 import os
