@@ -1,0 +1,29 @@
+# Choose another queue
+# +AccountingGroup="long.gladstone"
+# +AccountingGroup="quicktest.gladstone"
+# +AccountingGroup="gpu.gladstone"
+
+# Change default job resources
+#request_cpus = <num_cpus>
+#request_memory = <mem_in_MB>
+#request_disk = <disk_in_KB>
+
+# Run environment first
+executable = {}
+
+# Locations for log, error and output files
+initialdir     = /data/user/pschlunder/logs/
+output         = $(initialdir)$(Jobname).$(Cluster).out
+error          = $(initialdir)$(Jobname).$(Cluster).err
+
+#  Unified log
+log = /data/user/pschlunder/logs/onelog/mostRecent_$(Jobname)_condor.log
+
+# Just send a mail for the whole job
+notification   = never
+getenv         = true
+universe       = vanilla
+
+# Actual executable, and command to queue and run the jobs 
+Arguments = {}
+queue
