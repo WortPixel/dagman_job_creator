@@ -27,7 +27,7 @@ def generate_DAGman_job(argv):
     try:
         config.read(argv[0])
     except:
-        print('Use `python create_jobs.py <config-file>`')
+        print('Use `./create_dagman_job <config-file>`')
 
     job_name = config.get('job', 'job_name')
     particle_types = config.get('data', 'particle_types').split(',')
@@ -99,7 +99,7 @@ def generate_DAGman_job(argv):
         # create subfolder for each dataset
         temp_dir = join(job_name, particle + systematics)
         create_folder(temp_dir)
-        subprocess.call(['cp', basename(argv[0]),
+        subprocess.call(['cp', join(dirname(argv[0]), basename(argv[0])),
                         join(job_name, basename(argv[0]))])
 
         with open(join(temp_dir,'dagman.config'), 'w') as dagman:
