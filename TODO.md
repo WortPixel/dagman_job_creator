@@ -1,0 +1,2 @@
+- add lido/phido/cobalt job-management via hostname
+- create test job with given settings but for one file only
